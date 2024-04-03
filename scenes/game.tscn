@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8mot8pabtxob"]
+[gd_scene load_steps=5 format=3 uid="uid://b8mot8pabtxob"]
 
 [ext_resource type="TileSet" uid="uid://30okrh0iwxsg" path="res://resources/tile_set.tres" id="1_syjqr"]
 [ext_resource type="PackedScene" uid="uid://bsewk7lyp7adv" path="res://objects/player.tscn" id="2_myqih"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_0ywyt"]
 [ext_resource type="AudioStream" uid="uid://defstot4mt3av" path="res://assets/sound/Adrian - ShooterGameMainTheme.mp3" id="3_p7gg3"]
 
 [node name="Game" type="Node2D"]
@@ -54,6 +55,7 @@ position = Vector2(945, 111)
 position = Vector2(0, 1)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+script = ExtResource("3_0ywyt")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_p7gg3")

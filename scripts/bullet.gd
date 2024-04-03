@@ -5,7 +5,7 @@ var time = 0
 
 func _process(delta):
 	time += delta
-	if delta > 5:
+	if time > 0.5:
 		queue_free()
 
 func _on_body_entered(body):
