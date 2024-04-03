@@ -1,13 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8mot8pabtxob"]
+[gd_scene load_steps=4 format=3 uid="uid://b8mot8pabtxob"]
 
 [ext_resource type="TileSet" uid="uid://30okrh0iwxsg" path="res://resources/tile_set.tres" id="1_syjqr"]
 [ext_resource type="PackedScene" uid="uid://bsewk7lyp7adv" path="res://objects/player.tscn" id="2_myqih"]
 [ext_resource type="AudioStream" uid="uid://defstot4mt3av" path="res://assets/sound/Adrian - ShooterGameMainTheme.mp3" id="3_p7gg3"]
-[ext_resource type="Shader" path="res://shaders/game_postprocess.gdshader" id="4_j5tpk"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1772"]
-shader = ExtResource("4_j5tpk")
-shader_parameter/curvature = Vector2(4, 4)
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -65,13 +60,3 @@ stream = ExtResource("3_p7gg3")
 volume_db = 1.123
 autoplay = true
 attenuation = 0.812252
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_a1772")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
