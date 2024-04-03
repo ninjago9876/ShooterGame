@@ -94,7 +94,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_f1ofx"]
 
 [node name="Bullet" type="RigidBody2D"]
-collision_layer = 9
+collision_layer = 8
+collision_mask = 16
 gravity_scale = 0.0
 max_contacts_reported = 50
 contact_monitor = true
