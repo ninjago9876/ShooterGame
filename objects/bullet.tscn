@@ -112,7 +112,7 @@ frame_progress = 0.0421734
 color = Color(1, 1, 0.4, 1)
 energy = 0.71
 texture = ExtResource("21_m62js")
-texture_scale = 6.28
+texture_scale = 8.44
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_f1ofx")
