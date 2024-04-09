@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	GlobalGameManager.update_highscore()
-	%Highscore.text = "Highscore:    Level " + str(GlobalGameManager.level) + "    :    " + str(GlobalGameManager.kills) + " Kills"
+	#GlobalGameManager.update_highscore()
+	#%Highscore.text = "Highscore:    Level " + str(GlobalGameManager.level) + "    :    " + str(GlobalGameManager.kills) + " Kills"
 	if (get_tree().get_nodes_in_group("Enemy").size() > 0):
 		for enemy in get_tree().get_nodes_in_group("Enemy"):
 			enemy.queue_free()
