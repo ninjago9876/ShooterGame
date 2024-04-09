@@ -11,6 +11,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	offsetTarget = (get_local_mouse_position() / 10) * mouseLookFactor
 	offset -= ((offset - offsetTarget) / 10) * mouseLookSpeed

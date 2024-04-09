@@ -10,7 +10,12 @@ var deg = 0
 
 var running = false;
 
+@export var health = 100
+@export var max_health = 100
+@export var gamemanager: LocalGameManager
+
 func _physics_process(delta):
+	if gamemanager.paused: return
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var action = "idle_"
@@ -43,3 +48,25 @@ func _physics_process(delta):
 	var rightDir = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
 	if not rightDir.is_zero_approx():
 		$GunGimbal.global_rotation += wrapf(rightDir.angle() - $GunGimbal.global_rotation, -PI, PI) * 0.2
+	
+	if health < 100:
+		health += delta * 2
+
+func checkDeath():
+	if health < 0:
+		get_tree().change_scene_to_packed(load("res://scenes/main_menu.tscn"))   
+
+func _on_hitbox_body_entered(body):
+	if body is Bullet && self:
+		health -= 5
+		var tween = create_tween()
+		tween.tween_property($AnimatedSprite2D, "modulate", Color(1, 0.15, 0.17), 0.2)
+		tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.02)
+		checkDeath()
+		body.queue_free()
+	if body is Supplies && self:
+		health += 20
+		var tween = create_tween()
+		tween.tween_property($AnimatedSprite2D, "modulate", Color.GREEN_YELLOW, 0.4)
+		tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.02)
+		body.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b24ck67af5vvn"]
+[gd_scene load_steps=15 format=3 uid="uid://b24ck67af5vvn"]
 
 [ext_resource type="TileSet" uid="uid://30okrh0iwxsg" path="res://resources/tile_set.tres" id="1_4lj7f"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_86q8a"]
@@ -6,6 +6,8 @@
 [ext_resource type="Shader" path="res://shaders/menu_background.gdshader" id="2_kj0n3"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="2_o2d0p"]
 [ext_resource type="FontFile" uid="uid://dte5rcko343dd" path="res://assets/fonts/BebasNeue-Regular.ttf" id="2_uxpk1"]
+[ext_resource type="AudioStream" uid="uid://ckb5lh0npw4eb" path="res://assets/sound/ShooterGameMenuTheme.mp3" id="3_8l55h"]
+[ext_resource type="Script" path="res://scripts/musicmanager.gd" id="7_e1bfx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_penlb"]
 
@@ -29,6 +31,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_86q8a")
 metadata/_edit_lock_ = true
+
+[node name="MusicManager" type="Node" parent="." node_paths=PackedStringArray("music")]
+script = ExtResource("7_e1bfx")
+music = NodePath("../Music")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8l55h")
+volume_db = 1.123
+max_distance = 1e+07
+attenuation = 0.812252
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(400, 300)
@@ -101,6 +113,24 @@ offset_right = -0.200012
 grow_horizontal = 2
 grow_vertical = 0
 text = "Exit"
+
+[node name="Highscore" type="Label" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = 95.0
+offset_right = 181.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7yy6o")
+theme_override_font_sizes/font_size = 46
+text = "Highscore:    Level 0    :    0 Kills"
+horizontal_alignment = 1
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1

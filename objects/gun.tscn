@@ -75,7 +75,7 @@ sprite_frames = SubResource("SpriteFrames_f6n11")
 animation = &"idle_0"
 
 [node name="BulletHole" type="Marker2D" parent="."]
-position = Vector2(0, -30)
+position = Vector2(0, -29)
 rotation = -3.14159
 
 [node name="Flash" type="PointLight2D" parent="BulletHole"]

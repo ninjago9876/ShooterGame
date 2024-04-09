@@ -3,11 +3,13 @@ class_name Bullet
 
 var time = 0
 
+var despawn_time = 0.5
+
 func _process(delta):
 	time += delta
-	if time > 0.5:
+	if time > despawn_time:
 		queue_free()
 
-func _on_body_entered(body):
-	if (body is TileMap):
+func _on_body_entered(_body):
+	if time > 0.05:
 		queue_free()
