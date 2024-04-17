@@ -48,7 +48,7 @@ func spawn_enemies(num: int):
 		if (used.has(point)): continue
 		used.append(point)
 		var instance: Enemy = enemy.instantiate()
-		enemy.gamemanager = self
+		instance.gamemanager = self
 		instance.global_position = point.global_position
 		instance.player = player
 		get_tree().root.add_child(instance)

@@ -1,9 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://j6wwtkefsxnc"]
+[gd_scene load_steps=42 format=3 uid="uid://dn4am36xffc4r"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_8pkmt"]
 [ext_resource type="Texture2D" uid="uid://b55gfj0iylgmd" path="res://assets/player/blue_player.png" id="1_nv02y"]
-[ext_resource type="PackedScene" uid="uid://c22nm2abej7nr" path="res://objects/gun.tscn" id="3_6ymbw"]
-[ext_resource type="AudioStream" uid="uid://cr6a5p2fogxit" path="res://assets/sound/step.wav" id="4_yfqaj"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_x3a2a"]
+[ext_resource type="PackedScene" uid="uid://c22nm2abej7nr" path="res://objects/gun.tscn" id="2_athr4"]
+[ext_resource type="FontFile" uid="uid://dlheqg4jcrxrh" path="res://assets/fonts/Teko-VariableFont_wght.ttf" id="4_pl5j0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8q5ni"]
 atlas = ExtResource("1_nv02y")
@@ -133,7 +133,7 @@ region = Rect2(32, 22, 16, 22)
 atlas = ExtResource("1_nv02y")
 region = Rect2(32, 44, 16, 22)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eol1d"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_n60g3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -312,58 +312,108 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_clioy"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_dd0bn"]
 radius = 5.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_13nwc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_50wsg"]
 radius = 15.0333
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mau1"]
+bg_color = Color(0.176471, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.333333, 0.117647, 0.0117647, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(0, 0.515)
+anti_aliasing_size = 0.205
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4uqb"]
+bg_color = Color(0.729412, 0, 0.117647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.560784, 0, 0.054902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 5
+anti_aliasing_size = 0.092
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+y_sort_enabled = true
 motion_mode = 1
 wall_min_slide_angle = 0.0
-script = ExtResource("1_8pkmt")
-SPEED = 50.0
+safe_margin = 0.001
+script = ExtResource("1_x3a2a")
+SPEED = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-1, -12)
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_eol1d")
+sprite_frames = SubResource("SpriteFrames_n60g3")
 animation = &"idle_90"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_clioy")
+shape = SubResource("CircleShape2D_dd0bn")
 
 [node name="GunGimbal" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -6)
 rotation = 1.5708
 
-[node name="Gun" parent="GunGimbal" instance=ExtResource("3_6ymbw")]
+[node name="Gun" parent="GunGimbal" instance=ExtResource("2_athr4")]
 unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(3, -1.07284e-07)
 rotation = 1.5708
-speed = 1500
+speed = 1200
 fireSpeed = 1
-bulletDespawnTime = 100.0
+bulletDespawnTime = 1.0
 
-[node name="StepSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_yfqaj")
-volume_db = -18.324
-pitch_scale = 1.35
-attenuation = 11.3137
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 100.0
+
+[node name="PathfindTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_13nwc")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+shape = SubResource("CircleShape2D_50wsg")
 
 [node name="ShootTimer" type="Timer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -28.0
+offset_top = -50.0
+offset_right = 28.0
+offset_bottom = -36.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("4_pl5j0")
+theme_override_font_sizes/font_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_8mau1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j4uqb")
+value = 0.6
+show_percentage = false
+
+[connection signal="timeout" from="PathfindTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

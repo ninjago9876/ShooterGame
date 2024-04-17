@@ -41,9 +41,6 @@ func make_path():
 	if to_local(player.global_position).length() < 200:
 		$NavigationAgent2D.target_position = player.global_position - to_local(player.global_position).normalized()*200
 
-func _on_timer_timeout():
-	make_path()
-
 func checkDeath():
 	if health < 0 && player:
 		queue_free()
@@ -62,3 +59,6 @@ func _on_hitbox_body_entered(body):
 func _on_shoot_timer_timeout():
 	$GunGimbal.global_rotation_degrees += rng.randf_range(-2, 2)
 	$GunGimbal/Gun.fire()
+
+func _on_pathfind_timer_timeout():
+	make_path()
