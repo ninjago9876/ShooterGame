@@ -38,7 +38,7 @@ func _physics_process(delta):
 	
 	animated_sprite_2d.play(action + str(deg))
 	
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_pressed("fire"):
 		%Gun.fire()
 
 	move_and_slide()
@@ -54,19 +54,18 @@ func _physics_process(delta):
 
 func checkDeath():
 	if health < 0:
-		get_tree().change_scene_to_packed(load("res://scenes/main_menu.tscn"))   
+		gamemanager.end_game()
 
 func _on_hitbox_body_entered(body):
 	if body is Bullet && self:
-		health -= 5
-		var tween = create_tween()
-		tween.tween_property($AnimatedSprite2D, "modulate", Color(1, 0.15, 0.17), 0.2)
-		tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.02)
-		checkDeath()
-		body.queue_free()
-	if body is Supplies && self:
-		health += 20
-		var tween = create_tween()
-		tween.tween_property($AnimatedSprite2D, "modulate", Color.GREEN_YELLOW, 0.4)
-		tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.02)
+		if not GlobalGameManager.god_mode:
+			health -= 5
+			var tween = create_tween()
+			tween.tween_property($AnimatedSprite2D, "modulate", Color(1, 0.15, 0.17), 0.2)
+			tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.02)
+			checkDeath()
+		else:
+			var tween = create_tween()
+			tween.tween_property($AnimatedSprite2D, "modulate", Color(0.18, 0.76, 0.94), 0.2)
+			tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.02)
 		body.queue_free()

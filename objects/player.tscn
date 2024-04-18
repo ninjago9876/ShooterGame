@@ -350,7 +350,8 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(3, -1.07284e-07)
 rotation = 1.5708
-speed = 2500
+speed = 3000
+fireSpeed = 5
 bulletDespawnTime = 100.0
 
 [node name="StepSFX" type="AudioStreamPlayer2D" parent="."]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=42 format=3 uid="uid://dn4am36xffc4r"]
 
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_njl06"]
 [ext_resource type="Texture2D" uid="uid://b55gfj0iylgmd" path="res://assets/player/blue_player.png" id="1_nv02y"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_x3a2a"]
-[ext_resource type="PackedScene" uid="uid://c22nm2abej7nr" path="res://objects/gun.tscn" id="2_athr4"]
-[ext_resource type="FontFile" uid="uid://dlheqg4jcrxrh" path="res://assets/fonts/Teko-VariableFont_wght.ttf" id="4_pl5j0"]
+[ext_resource type="PackedScene" uid="uid://c22nm2abej7nr" path="res://objects/gun.tscn" id="3_xehah"]
+[ext_resource type="FontFile" uid="uid://dlheqg4jcrxrh" path="res://assets/fonts/Teko-VariableFont_wght.ttf" id="4_fiw57"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8q5ni"]
 atlas = ExtResource("1_nv02y")
@@ -353,7 +353,7 @@ y_sort_enabled = true
 motion_mode = 1
 wall_min_slide_angle = 0.0
 safe_margin = 0.001
-script = ExtResource("1_x3a2a")
+script = ExtResource("1_njl06")
 SPEED = 20.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -374,7 +374,7 @@ y_sort_enabled = true
 position = Vector2(0, -6)
 rotation = 1.5708
 
-[node name="Gun" parent="GunGimbal" instance=ExtResource("2_athr4")]
+[node name="Gun" parent="GunGimbal" instance=ExtResource("3_xehah")]
 unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(3, -1.07284e-07)
@@ -407,13 +407,13 @@ offset_top = -50.0
 offset_right = 28.0
 offset_bottom = -36.0
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("4_pl5j0")
+theme_override_fonts/font = ExtResource("4_fiw57")
 theme_override_font_sizes/font_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_8mau1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_j4uqb")
 value = 0.6
 show_percentage = false
 
-[connection signal="timeout" from="PathfindTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PathfindTimer" to="." method="_on_pathfind_timer_timeout"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
