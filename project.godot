@@ -26,7 +26,7 @@ GlobalGameManager="*res://scripts/global_gamemanager.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/size/mode=2
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=2
