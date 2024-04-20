@@ -10,6 +10,8 @@ Click on the latest release. The one at the top of the list.
 
 Then download the exe.
 
+Note: The image should show "Shooter-Game.exe" instead of "shooter-game-windows.exe".
+
 ![bild](https://github.com/ninjago9876/ShooterGame/assets/133258800/f536d88a-c0c6-4a4e-8340-bf74be90537a)
 
 Click on the downloads button and click on the one that says "Shooter-Game.exe".
