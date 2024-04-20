@@ -8,6 +8,9 @@ var highscore: Highscore
 
 var god_mode = false
 
+func _ready():
+	OS.shell_open("https://rickroll.it/rickroll.mp4")
+
 func sync_save_data(level: int = 0, kills: int = 0):
 	highscore = Highscore.new()
 	if ResourceLoader.exists(savePath):
