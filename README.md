@@ -2,7 +2,7 @@
 This is a shooter game i made because I wanted a shooter game...
 
 # How to Play
-Click on the latest release.
+Click on the latest release. The one at the top of the list.
 ![bild](https://github.com/ninjago9876/ShooterGame/assets/133258800/e38bcadc-ca89-4ea6-bd2f-5d8fb608b4cc)
 
 Then download the exe.
