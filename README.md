@@ -17,4 +17,5 @@ Click on the downloads button and click on the one that says "shooter-game-windo
 ![bild](https://github.com/ninjago9876/ShooterGame/assets/133258800/7eadd9cd-a8a2-4ef3-abfd-e220f6b8e6dd)
 
 You will then probably get a message saying that you are running code from someone Unknown. Just press More Information or something and press run anyways.
-Close your web browser and double click the new icon on your desktop!
+
+You can now play my game!
