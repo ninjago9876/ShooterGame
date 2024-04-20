@@ -261,6 +261,19 @@ theme_override_fonts/font = ExtResource("2_7yy6o")
 theme_override_font_sizes/font_size = 26
 text = "Made by Ninjago987"
 
+[node name="MusicAuthor" type="Label" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 182.0
+offset_top = -40.0
+offset_right = 344.0
+offset_bottom = 1.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7yy6o")
+theme_override_font_sizes/font_size = 26
+text = "Music by BlueTech16"
+
 [node name="Background" type="CanvasLayer" parent="."]
 layer = 0
 follow_viewport_enabled = true
@@ -323,6 +336,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="Ambience" type="CanvasLayer" parent="Background"]
 layer = 0
@@ -336,6 +350,7 @@ offset_right = 276.0
 offset_bottom = -225.0
 mouse_filter = 2
 texture = SubResource("NoiseTexture2D_1eliv")
+metadata/_edit_lock_ = true
 
 [node name="CheatCode" parent="." instance=ExtResource("10_ax355")]
 gamepad = Array[InputEvent]([SubResource("InputEventJoypadButton_5rumk"), SubResource("InputEventJoypadButton_luav4"), SubResource("InputEventJoypadButton_l1nug"), SubResource("InputEventJoypadButton_bbchg"), SubResource("InputEventJoypadButton_urpcu"), SubResource("InputEventJoypadButton_08c6u"), SubResource("InputEventJoypadButton_1wing"), SubResource("InputEventJoypadButton_xcueh"), SubResource("InputEventJoypadButton_i8wy0"), SubResource("InputEventJoypadButton_qrjor")])

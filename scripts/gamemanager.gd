@@ -7,7 +7,7 @@ class_name LocalGameManager
 @export var levelCounter: Label
 @export var pausemenu: CanvasLayer
 
-@onready var enemy: PackedScene = preload("res://objects/enemy.tscn")
+@onready var enemy: PackedScene = preload("res://objects/enemie.tscn")
 var rng = RandomNumberGenerator.new()
 
 var paused = false
