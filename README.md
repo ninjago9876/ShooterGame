@@ -12,7 +12,7 @@ Then download the exe.
 
 ![bild](https://github.com/ninjago9876/ShooterGame/assets/133258800/f536d88a-c0c6-4a4e-8340-bf74be90537a)
 
-Click on the downloads button and click on the one that says "shooter-game-windows.exe".
+Click on the downloads button and click on the one that says "Shooter-Game.exe".
 
 ![bild](https://github.com/ninjago9876/ShooterGame/assets/133258800/7eadd9cd-a8a2-4ef3-abfd-e220f6b8e6dd)
 
