@@ -414,6 +414,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_j4uqb")
 value = 0.6
 show_percentage = false
 
-[connection signal="timeout" from="PathfindTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PathfindTimer" to="." method="_on_pathfind_timer_timeout"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
