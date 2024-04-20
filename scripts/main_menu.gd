@@ -5,7 +5,7 @@ func _ready():
 	%Highscore.text = "Level: " + str(GlobalGameManager.highscore.level) + "     Kills: " + str(GlobalGameManager.highscore.kills)
 	remove_enemies()
 
-func _process(delta):
+func _process(_delta):
 	%GodMode.visible = GlobalGameManager.god_mode
 	%GodModeEffect.visible = GlobalGameManager.god_mode
 
