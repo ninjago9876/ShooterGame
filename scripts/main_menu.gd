@@ -4,10 +4,13 @@ func _ready():
 	GlobalGameManager.sync_save_data()
 	%Highscore.text = "Level: " + str(GlobalGameManager.highscore.level) + "     Kills: " + str(GlobalGameManager.highscore.kills)
 	remove_enemies()
+	%PlayButton.grab_focus()
 
 func _process(_delta):
 	%GodMode.visible = GlobalGameManager.god_mode
 	%GodModeEffect.visible = GlobalGameManager.god_mode
+	if Input.is_action_just_pressed("ui_up"):
+		%PlayButton.grab_focus()
 
 func remove_enemies():
 	if (get_tree().get_nodes_in_group("Enemy").size() > 0):

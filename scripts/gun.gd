@@ -7,7 +7,7 @@ var bullet
 @export var fireSpeed = 3
 @export var bulletDespawnTime = 0.5
 
-func fire():
+func fire(vibrate: bool = false):
 	if ($AnimationPlayer.is_playing()): return
 	$AnimationPlayer.speed_scale = fireSpeed
 	$AnimationPlayer.play("fire_gun")
@@ -21,7 +21,8 @@ func fire():
 	)
 	get_tree().current_scene.add_child(bullet_instance)
 	
-	Input.start_joy_vibration(0, 1, 1, 0.2)
+	if vibrate:
+		Input.start_joy_vibration(0, 0.5, 1, 0.1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

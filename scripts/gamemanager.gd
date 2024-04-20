@@ -28,6 +28,8 @@ func _process(_delta):
 		paused = not paused
 	pausemenu.visible = paused
 	Engine.time_scale = int(not paused)
+	%GodModeDetected.visible = GlobalGameManager.god_mode
+	%GodModeEffect.visible = GlobalGameManager.god_mode
 
 func spawn_enemies(num: int):
 	var points = get_tree().get_nodes_in_group("SpawnPoint")

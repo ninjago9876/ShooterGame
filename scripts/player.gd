@@ -37,9 +37,6 @@ func _physics_process(delta):
 	$StepSFX.pitch_scale = 1.35 + 0.5 * int(running)
 	
 	animated_sprite_2d.play(action + str(deg))
-	
-	if Input.is_action_pressed("fire"):
-		%Gun.fire()
 
 	move_and_slide()
 	
@@ -47,10 +44,15 @@ func _physics_process(delta):
 		$GunGimbal.look_at(get_global_mouse_position())
 	var rightDir = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
 	if not rightDir.is_zero_approx():
-		$GunGimbal.global_rotation += wrapf(rightDir.angle() - $GunGimbal.global_rotation, -PI, PI) * 0.2
+		$GunGimbal.global_rotation_degrees += rightDir.x * 135 * delta
 	
 	if health < 100:
 		health += delta * 2
+
+func _input(event):
+		if event.is_action_pressed("fire"):
+			%Gun.fire(event is InputEventJoypadMotion)
+
 
 func checkDeath():
 	if health < 0:

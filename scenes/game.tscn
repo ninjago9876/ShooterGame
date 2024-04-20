@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8mot8pabtxob"]
+[gd_scene load_steps=24 format=3 uid="uid://b8mot8pabtxob"]
 
 [ext_resource type="TileSet" uid="uid://30okrh0iwxsg" path="res://resources/tile_set.tres" id="1_syjqr"]
 [ext_resource type="Script" path="res://scripts/musicmanager.gd" id="2_fum12"]
@@ -10,26 +10,13 @@
 [ext_resource type="Script" path="res://scripts/pause.gd" id="9_opb5i"]
 [ext_resource type="Shader" path="res://shaders/menu_background.gdshader" id="9_vslj8"]
 [ext_resource type="FontFile" uid="uid://dte5rcko343dd" path="res://assets/fonts/BebasNeue-Regular.ttf" id="10_tul30"]
+[ext_resource type="Shader" path="res://shaders/god_mode.gdshader" id="11_acg6k"]
+[ext_resource type="Shader" path="res://shaders/ambience.gdshader" id="12_4ipbr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_33mje"]
 vertices = PackedVector2Array(74, 554, 182, 554, 182, 575, 73, 574, 521, 553, 630, 554, 630, 573, 522, 573, 1003, 554, 1110, 553, 1110, 575, 1002, 574, 375, 94, 331, 94, 286, 62, 700, 35, 770, 35, 456, 93, 1003, 170, 1174, 190, 916, 190, 790, 170, 1172, 10, 1154, 127, 1154, 102, 1088, 71, 1119, 105, 1087, 96, 1120, 127, 673, 30, 670, 8, 699, 9, 640, 30, 284, 38, 578, 31, 898, 129, 897, 64, 990, 65, 992, 159, 802, 159, 887, 130, 374, 191, 330, 191, 234, 9, 415, 8, 415, 31, 916, 254, 650, 253, 790, 30, 650, 91, 802, 64, 831, 64, 831, 131, 567, 92, 566, 158, 457, 158, 578, 10, 639, 9, 258, 40, 233, 95, 258, 63, 768, 10, 887, 28, 1057, 96, 1002, 28, 1057, 72, 841, 131, 842, 31, 64, 90, 95, 89, 132, 90, 160, 91, 130, 131, 93, 133, 64, 131, 643, 673, 991, 641, 1055, 640, 1056, 673, -411, 1296, 867, 362, 898, 363, 1120, 543, 991, 542, 33, 448, 32, 422, 708, 362, 193, 89, 222, -2, 224, 163, 194, 157, 192, 131, 192, 67, 1187, 285, 1185, -3, 1513, -408, 1545, 1296, 1122, 673, 1147, 284, -399, -400, 1112, 673, 1065, 672, 129, 217, 159, 198, 161, 219, 33, 289, 159, 157, 129, 196, 132, 155, 158, 133, 576, 226, 575, 157, 607, 159, 609, 273, 449, 224, 641, 321, 659, 350, 2, 421, 374, 193, 384, 194, 193, 217, 319, 195, 96, 218, 33, 261, 65, 218, 95, 197, 30, 218, 1, 262, 641, 543, 512, 543, 632, 673, 585, 673, 574, 673, 194, 672, 512, 641, 575, 641, 183, 673, 137, 673, 127, 673, 94, 155, 64, 196, 63, 155, 721, 348, 720, 322, 847, 323, 847, 349, 318, 162, 246, 194, 246, 179, 233, 180, 64, 68, 96, 68, 192, 543, 64, 543, 0, 449, 929, 323, 930, 257, 1148, 259, 384, 160, 444, 160, 64, 641, 127, 641, 161, 67, 129, 66, 637, 271, 31, 132, 33, 89, 657, 321, 32, 70, 913, 352, 912, 329, 921, 323, 234, 193, 193, 197, 31, 155, 30, 197, 678, 361, 1, 288, 330, 193)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 19, 23, 24), PackedInt32Array(25, 22, 24, 26, 27), PackedInt32Array(23, 19, 18, 28), PackedInt32Array(29, 30, 31, 15), PackedInt32Array(32, 29, 15, 14, 33, 34), PackedInt32Array(35, 36, 37, 38), PackedInt32Array(35, 38, 39, 40), PackedInt32Array(41, 42, 13, 12), PackedInt32Array(43, 44, 45, 33), PackedInt32Array(20, 46, 47, 21), PackedInt32Array(48, 21, 47, 49, 16), PackedInt32Array(39, 50, 51, 52), PackedInt32Array(53, 54, 55, 17), PackedInt32Array(34, 56, 57, 32), PackedInt32Array(45, 34, 33), PackedInt32Array(43, 33, 58), PackedInt32Array(59, 43, 58, 60), PackedInt32Array(13, 59, 60, 14), PackedInt32Array(53, 17, 16, 49), PackedInt32Array(48, 16, 61), PackedInt32Array(48, 61, 22, 62), PackedInt32Array(27, 26, 28, 18, 63), PackedInt32Array(63, 18, 64, 65), PackedInt32Array(39, 52, 66), PackedInt32Array(40, 39, 66), PackedInt32Array(40, 66, 67, 62), PackedInt32Array(25, 65, 64, 22), PackedInt32Array(22, 64, 62), PackedInt32Array(48, 62, 67), PackedInt32Array(68, 69, 70, 71, 72, 73, 74), PackedInt32Array(75, 76, 77, 78, 79), PackedInt32Array(80, 81, 82, 83, 84, 85, 86), PackedInt32Array(87, 88, 89, 90, 91), PackedInt32Array(88, 87, 92), PackedInt32Array(93, 94, 95, 96), PackedInt32Array(93, 96, 97, 82, 98), PackedInt32Array(99, 95, 94, 88), PackedInt32Array(97, 96, 79, 100), PackedInt32Array(101, 100, 79, 78), PackedInt32Array(102, 103, 104, 105), PackedInt32Array(106, 103, 102, 107, 108, 109), PackedInt32Array(109, 108, 72, 71), PackedInt32Array(71, 87, 91, 109), PackedInt32Array(110, 111, 112, 113), PackedInt32Array(105, 114, 110, 113, 115, 116, 85, 117), PackedInt32Array(118, 119, 114, 105, 120, 121), PackedInt32Array(104, 120, 105), PackedInt32Array(122, 102, 105, 123), PackedInt32Array(122, 123, 124, 125), PackedInt32Array(126, 124, 123, 127), PackedInt32Array(76, 75, 128, 83), PackedInt32Array(84, 83, 128, 129), PackedInt32Array(130, 75, 79), PackedInt32Array(131, 130, 79), PackedInt32Array(132, 131, 79), PackedInt32Array(132, 79, 133, 134, 135), PackedInt32Array(136, 133, 79), PackedInt32Array(137, 136, 79), PackedInt32Array(138, 137, 79), PackedInt32Array(73, 139, 125, 124, 140, 141, 74), PackedInt32Array(142, 143, 144, 145), PackedInt32Array(146, 121, 147, 148), PackedInt32Array(89, 146, 148, 149), PackedInt32Array(69, 68, 150, 151), PackedInt32Array(134, 133, 152, 129), PackedInt32Array(84, 129, 152), PackedInt32Array(84, 152, 153, 154), PackedInt32Array(155, 156, 157, 98, 82), PackedInt32Array(119, 158, 159, 114), PackedInt32Array(160, 161, 138, 79), PackedInt32Array(160, 79, 99, 154), PackedInt32Array(162, 71, 70, 163), PackedInt32Array(113, 164, 115), PackedInt32Array(68, 74, 165, 166), PackedInt32Array(115, 167, 116), PackedInt32Array(99, 88, 92, 162, 163), PackedInt32Array(99, 163, 151, 150), PackedInt32Array(99, 150, 168), PackedInt32Array(169, 170, 171, 155, 82), PackedInt32Array(81, 169, 82), PackedInt32Array(103, 106, 90, 89, 149, 172, 173), PackedInt32Array(86, 142, 145, 80), PackedInt32Array(99, 168, 166, 165), PackedInt32Array(127, 99, 165, 174, 175), PackedInt32Array(176, 86, 85), PackedInt32Array(116, 176, 85), PackedInt32Array(177, 105, 117), PackedInt32Array(154, 153, 160), PackedInt32Array(117, 154, 99, 177), PackedInt32Array(127, 177, 99), PackedInt32Array(175, 126, 127), PackedInt32Array(140, 175, 174, 141), PackedInt32Array(125, 139, 108, 107), PackedInt32Array(120, 173, 172, 147), PackedInt32Array(120, 147, 121), PackedInt32Array(118, 121, 178)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(234, 9, 415, 8, 415, 31, 578, 31, 578, 10, 639, 9, 640, 30, 673, 30, 670, 8, 699, 9, 700, 35, 770, 35, 768, 10, 1172, 10, 1174, 190, 916, 190, 916, 254, 650, 253, 650, 91, 567, 92, 566, 158, 457, 158, 456, 93, 375, 94, 374, 191, 330, 191, 331, 94, 233, 95), PackedVector2Array(1057, 72, 1057, 96, 1087, 96, 1088, 71), PackedVector2Array(1119, 105, 1120, 127, 1154, 127, 1154, 102), PackedVector2Array(790, 30, 790, 170, 1003, 170, 1002, 28, 887, 28, 887, 130, 898, 129, 897, 64, 990, 65, 992, 159, 802, 159, 802, 64, 831, 64, 831, 131, 841, 131, 842, 31), PackedVector2Array(258, 40, 258, 63, 286, 62, 284, 38), PackedVector2Array(-399, -400, 1513, -408, 1545, 1296, -411, 1296), PackedVector2Array(222, -2, 224, 163, 318, 162, 319, 195, 330, 193, 374, 193, 384, 194, 384, 160, 444, 160, 449, 224, 576, 226, 575, 157, 607, 159, 609, 273, 637, 271, 641, 321, 657, 321, 659, 350, 678, 361, 708, 362, 721, 348, 720, 322, 847, 323, 847, 349, 867, 362, 898, 363, 913, 352, 912, 329, 921, 323, 929, 323, 930, 257, 1148, 259, 1147, 284, 1187, 285, 1185, -3), PackedVector2Array(32, 70, 33, 89, 64, 90, 64, 68), PackedVector2Array(96, 68, 95, 89, 132, 90, 129, 66), PackedVector2Array(161, 67, 160, 91, 193, 89, 192, 67), PackedVector2Array(31, 132, 31, 155, 63, 155, 64, 131), PackedVector2Array(93, 133, 94, 155, 132, 155, 130, 131), PackedVector2Array(158, 133, 159, 157, 194, 157, 192, 131), PackedVector2Array(30, 197, 30, 218, 65, 218, 64, 196), PackedVector2Array(95, 197, 96, 218, 129, 217, 129, 196), PackedVector2Array(159, 198, 161, 219, 193, 217, 193, 197), PackedVector2Array(233, 180, 234, 193, 246, 194, 246, 179), PackedVector2Array(137, 673, 127, 673, 127, 641, 64, 641, 64, 543, 192, 543, 194, 672, 183, 673), PackedVector2Array(512, 641, 512, 543, 641, 543, 643, 673, 632, 673, 585, 673, 574, 673, 575, 641), PackedVector2Array(991, 542, 991, 641, 1055, 640, 1056, 673, 1065, 672, 1112, 673, 1122, 673, 1120, 543), PackedVector2Array(1, 262, 1, 288, 33, 289, 33, 261), PackedVector2Array(2, 421, 0, 449, 33, 448, 32, 422), PackedVector2Array(74, 554, 182, 554, 182, 575, 73, 574), PackedVector2Array(521, 553, 630, 554, 630, 573, 522, 573), PackedVector2Array(1003, 554, 1110, 553, 1110, 575, 1002, 574)])
-
-[sub_resource type="Gradient" id="Gradient_6u5qf"]
-colors = PackedColorArray(0.349065, 0.349065, 0.349065, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gni0h"]
-noise_type = 3
-fractal_octaves = 10
-fractal_lacunarity = 1.91
-fractal_gain = 0.495
-fractal_weighted_strength = 0.1
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_afmmu"]
-seamless = true
-color_ramp = SubResource("Gradient_6u5qf")
-noise = SubResource("FastNoiseLite_gni0h")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdvsx"]
 bg_color = Color(0.176471, 0, 0, 1)
@@ -119,6 +106,26 @@ shadow_color = Color(0, 0, 0, 0.317647)
 shadow_size = 10
 shadow_offset = Vector2(0, 4.24)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xpuy"]
+shader = ExtResource("12_4ipbr")
+shader_parameter/col1 = Vector4(-0.12, -0.27, -0.375, 0)
+shader_parameter/col2 = Vector4(-0.105, -0.175, -0.24, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_acpp8"]
+frequency = 0.0031
+fractal_octaves = 10
+fractal_lacunarity = 1.32
+fractal_gain = 0.65
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ufmas"]
+width = 2337
+height = 2307
+noise = SubResource("FastNoiseLite_acpp8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x6pbr"]
+shader = ExtResource("11_acg6k")
+shader_parameter/intensity = 0.78
+
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
@@ -141,10 +148,10 @@ position = Vector2(229, 563)
 position = Vector2(159, 573)
 
 [node name="SpawnPoint9" type="Node2D" parent="EnemySpawnPoints" groups=["SpawnPoint"]]
-position = Vector2(607, 573)
+position = Vector2(606, 567)
 
 [node name="SpawnPoint11" type="Node2D" parent="EnemySpawnPoints" groups=["SpawnPoint"]]
-position = Vector2(1087, 573)
+position = Vector2(1087, 568)
 
 [node name="SpawnPoint12" type="Node2D" parent="EnemySpawnPoints" groups=["SpawnPoint"]]
 position = Vector2(883, 589)
@@ -252,15 +259,6 @@ max_distance = 1e+07
 attenuation = 0.812252
 metadata/_edit_lock_ = true
 
-[node name="AmbientLight" type="PointLight2D" parent="."]
-position = Vector2(587, 348)
-color = Color(0.666667, 0.521569, 0.298039, 1)
-energy = 1.5
-blend_mode = 2
-texture = SubResource("NoiseTexture2D_afmmu")
-texture_scale = 4.4
-metadata/_edit_lock_ = true
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" type="ProgressBar" parent="UI"]
@@ -307,8 +305,21 @@ theme_override_fonts/font = ExtResource("6_i7axt")
 theme_override_font_sizes/font_size = 61
 text = "Level: 0"
 
+[node name="GodModeDetected" type="Label" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -34.0
+offset_right = 386.0
+offset_bottom = 7.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_i7axt")
+theme_override_font_sizes/font_size = 26
+text = "God Mode detected! Highscores will not be saved"
+
 [node name="PauseUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("gamemanager")]
-visible = false
 script = ExtResource("9_opb5i")
 gamemanager = NodePath("../GameManager")
 
@@ -373,7 +384,6 @@ offset_right = -0.052002
 offset_bottom = -0.176025
 grow_horizontal = 2
 grow_vertical = 2
-focus_mode = 0
 theme_override_colors/font_color = Color(0.776471, 0.196078, 0.137255, 1)
 theme_override_colors/font_pressed_color = Color(0.890196, 0.25098, 0.184314, 1)
 theme_override_colors/font_hover_color = Color(0.666667, 0.156863, 0.105882, 1)
@@ -399,7 +409,6 @@ offset_right = -0.052002
 offset_bottom = 0.071991
 grow_horizontal = 2
 grow_vertical = 2
-focus_mode = 0
 theme_override_colors/font_color = Color(0.776471, 0.196078, 0.137255, 1)
 theme_override_colors/font_pressed_color = Color(0.890196, 0.25098, 0.184314, 1)
 theme_override_colors/font_hover_color = Color(0.666667, 0.156863, 0.105882, 1)
@@ -411,6 +420,36 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_cvq0r")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6pidw")
 text = "Back to Game
 "
+
+[node name="Effect" type="CanvasLayer" parent="."]
+
+[node name="Ambience" type="CanvasLayer" parent="Effect"]
+layer = 0
+
+[node name="AmbientTexture" type="TextureRect" parent="Effect/Ambience"]
+texture_filter = 6
+material = SubResource("ShaderMaterial_3xpuy")
+offset_left = -576.0
+offset_top = -737.0
+offset_right = 276.0
+offset_bottom = -225.0
+texture = SubResource("NoiseTexture2D_ufmas")
+metadata/_edit_lock_ = true
+
+[node name="GodModeEffect" type="CanvasLayer" parent="Effect"]
+unique_name_in_owner = true
+visible = false
+
+[node name="GodModeEffect" type="ColorRect" parent="Effect/GodModeEffect"]
+material = SubResource("ShaderMaterial_x6pbr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="tree_exiting" from="MusicManager" to="MusicManager" method="_on_tree_exiting"]
