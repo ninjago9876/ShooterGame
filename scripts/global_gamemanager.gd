@@ -8,11 +8,6 @@ var highscore: Highscore
 
 var god_mode = false
 
-func _ready():
-	if FileAccess.file_exists("user://rickroll"): return
-	OS.shell_open("https://rickroll.it/rickroll.mp4")
-	FileAccess.open("user://rickroll", FileAccess.WRITE)
-
 func sync_save_data(level: int = 0, kills: int = 0):
 	highscore = Highscore.new()
 	if ResourceLoader.exists(savePath):
